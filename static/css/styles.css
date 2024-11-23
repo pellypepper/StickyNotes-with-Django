@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #4CAF50; /* A fresh, modern green */
+    --bgcolor: #f4f4f9; /* Soft light background */
+    --secondary-color: #ffffff; /* Clean white background for forms */
+    --text-color-light: white;
+    --text-color-dark: #333; /* Dark text for better readability */
+    --success-bg: #d4edda;
+    --error-bg: #f8d7da;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px; /* Rounded corners for elements */
+    --transition-speed: 0.3s;
+}
+
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    background-color: var(--bgcolor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color-dark);
+}
+
+/* Header Styles */
+.h1-div {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.h1-div h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Form Styles */
+.note-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    margin: 20px auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+}
+
+.note-form form input,
+.note-form form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all var(--transition-speed);
+}
+
+.note-form form input:focus,
+.note-form form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Button Styling */
+.note-form form button {
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.note-form form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.note-form form button:active {
+    transform: translateY(1px);
+}
+
+/* Link Styling */
+.note-form a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    padding: 12px;
+    width: 200px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.note-form a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    transform: translateY(-2px);
+}
+
+.note-form a:active {
+    transform: translateY(1px);
+}
+
+/* Add some general spacing and responsiveness */
+@media (max-width: 768px) {
+    .note-form form {
+        padding: 20px;
+    }
+
+    .note-form a {
+        width: 100%;
+    }
+}

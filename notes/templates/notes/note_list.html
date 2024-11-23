@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>My NotePad</h1>
+        <nav class="site-nav">
+            <a href="{% url 'note_list' %}">All Notes</a>
+            <a href="{% url 'note_create' %}">New  Note</a>
+        </nav>
+    </header>
+
+    <ul>
+        {% for note in notes %}
+        <li>
+           
+            <div>
+                <a href="{% url 'note_update' note.pk %}"> {{ note.title }}
+                    <!-- Only show the edit and delete links if the note has a valid primary key -->
+                    {% if note.pk %}</a>
+           
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

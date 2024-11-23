@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create or Edit Note</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="note-form">
+   <div class="h1-div"> <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Note</h1>
+   </div>
+   <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Render the form fields as paragraph tags -->
+    <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %} Note</button>
+    
+    {% if form.instance.pk %}
+    <a href="{% url 'note_delete' form.instance.pk %}" class="button delete-button">Delete</a>
+{% endif %}
+</form>
+
+    <a href="{% url 'note_list' %}">Back to all notes</a>
+</body>
+</html>

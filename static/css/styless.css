@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #4CAF50; /* Fresh green for accents */
+    --bgcolor: #f4f4f9; /* Soft light background */
+    --secondary-color: #ffffff; /* Clean white background for forms */
+    --text-color-light: white;
+    --text-color-dark: #333; /* Dark text for better readability */
+    --success-bg: #d4edda;
+    --error-bg: #f8d7da;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px; /* Larger rounded corners for a softer look */
+    --transition-speed: 0.3s;
+    --button-hover-bg: #45a049; /* Darker green for button hover */
+    --button-active-bg: #388e3c; /* Even darker green for button click */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* Soft light background */
+    color: #333; /* Dark text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 10px; /* Padding for small screens */
+}
+
+/* Container for centering content */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Set a max width for large screens */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slight scale effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 28px;
+    color: #4CAF50; /* Green color for headings */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Note Details Styling */
+.note-details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.note-details strong {
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    margin-top: 25px;
+}
+
+/* Input Fields Styling */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    font-size: 16px;
+    transition: border-color var(--transition-speed);
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--primary-color); /* Highlight input border on focus */
+    outline: none;
+}
+
+/* Delete Button Styling */
+.delete-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.delete-button:hover {
+    background-color: var(--button-hover-bg); /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.delete-button:active {
+    background-color: var(--button-active-bg); /* Darker green on click */
+    transform: translateY(1px); /* Slight push down effect on click */
+}
+
+/* Cancel Link Styling */
+.cancel-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #3498db; /* Blue color for action links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.cancel-link:hover {
+    color: #2980b9; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .delete-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    input[type="text"], textarea {
+        font-size: 14px;
+    }
+}
